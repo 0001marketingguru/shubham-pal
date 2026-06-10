@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "shadcnspace": {
+      "command": "npx",
+      "args": ["-y", "shadcnspace-mcp@latest"],
+      "env": {
+        "SHADCNSPACE_ENDPOINT": "https://shadcnspace.com/mcp"
+      }
+    }
+  }
+}
