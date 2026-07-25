@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Oswald, Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const oswald = Oswald({
+const outfit = Outfit({ 
   subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-display",
+  variable: "--font-outfit",
 });
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
 export const metadata: Metadata = {
-  title: "Shubham Pal | Elite Operational Systems & Funnels",
-  description: "Constructing high-converting GTM strategy, AI infrastructure, and CRO funnels for high-ticket entrepreneur portfolios.",
-  metadataBase: new URL("https://yourdomain.com"),
+  title: "Shubham Pal — AI Systems Engineer & Full-Stack Architect",
+  description: "Building autonomous AI systems, high-velocity web architecture, and digital products engineered for scale.",
 };
 
 export default function RootLayout({
@@ -23,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("dark scroll-smooth", "font-sans", inter.variable)}>
-      <body
-        className={`${oswald.variable} ${inter.variable} bg-neutral-dark text-foreground min-h-dvh flex flex-col antialiased`}
-      >
+    <html lang="en" className={cn("dark scroll-smooth", outfit.variable)}>
+      <body className="bg-[#09090b] text-zinc-100 min-h-dvh flex flex-col antialiased selection:bg-[#00e599] selection:text-black">
         {children}
       </body>
     </html>
