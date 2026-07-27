@@ -4,6 +4,7 @@ import { CurrentReality } from "@/components/sections/CurrentReality";
 import { RealityShift } from "@/components/sections/RealityShift";
 import { TechnologySection } from "@/components/sections/TechnologySection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SolutionsSection />
       <CurrentReality />
       <RealityShift />
+      <ProcessSection />
     </main>
   );
 }
