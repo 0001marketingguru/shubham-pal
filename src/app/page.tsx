@@ -10,10 +10,10 @@ export default function Home() {
     <main className="min-h-dvh bg-[#09090b] text-zinc-100 selection:bg-[#00e599] selection:text-black">
       <Navbar />
       <HeroSection />
-      <CurrentReality />
-      <RealityShift />
       <TechnologySection />
       <SolutionsSection />
+      <CurrentReality />
+      <RealityShift />
     </main>
   );
 }
