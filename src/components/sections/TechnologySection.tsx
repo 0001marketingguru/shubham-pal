@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { IconBrandOpenai, IconBrandSlack } from "@tabler/icons-react";
+import React from "react";
 
 /* ─── Lettermark SVG for tools without Simple Icons entries ─── */
 function Lettermark({ letter }: { letter: string }) {
@@ -28,22 +30,26 @@ function ToolChip({
   name,
   slug,
   lettermark,
+  icon: IconComponent,
 }: {
   name: string;
   slug?: string;
   lettermark?: string;
+  icon?: React.ElementType;
 }) {
   return (
     <div className="group flex-shrink-0 flex items-center gap-3 px-5 py-3 mx-2.5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#00e599]/40 hover:bg-white/[0.07] transition-all duration-500 cursor-default select-none">
       <div className="w-[22px] h-[22px] flex items-center justify-center flex-shrink-0">
-        {slug ? (
+        {IconComponent ? (
+          <IconComponent size={20} className="text-zinc-400 group-hover:text-white transition-colors duration-500" />
+        ) : slug ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={`https://cdn.simpleicons.org/${slug}/ffffff`}
             alt={name}
             width={22}
             height={22}
-            className="opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+            className="opacity-60 group-hover:opacity-100 transition-opacity duration-500"
           />
         ) : (
           <Lettermark letter={lettermark ?? "?"} />
@@ -57,8 +63,8 @@ function ToolChip({
 }
 
 /* ─── Tool lists ─── */
-const row1: { name: string; slug?: string; lettermark?: string }[] = [
-  { name: "ChatGPT",      slug: "openai" },
+const row1: { name: string; slug?: string; lettermark?: string; icon?: React.ElementType }[] = [
+  { name: "ChatGPT",      icon: IconBrandOpenai },
   { name: "Claude",       slug: "anthropic" },
   { name: "Gemini",       slug: "googlegemini" },
   { name: "Perplexity",   slug: "perplexity" },
@@ -68,7 +74,7 @@ const row1: { name: string; slug?: string; lettermark?: string }[] = [
   { name: "Zapier",       slug: "zapier" },
 ];
 
-const row2: { name: string; slug?: string; lettermark?: string }[] = [
+const row2: { name: string; slug?: string; lettermark?: string; icon?: React.ElementType }[] = [
   { name: "n8n",        slug: "n8n" },
   { name: "Make",       slug: "make" },
   { name: "Kling",      lettermark: "K" },
@@ -76,7 +82,7 @@ const row2: { name: string; slug?: string; lettermark?: string }[] = [
   { name: "Runway",     lettermark: "R" },
   { name: "Grok",       lettermark: "x" },
   { name: "Notion",     slug: "notion" },
-  { name: "Slack",      slug: "slack" },
+  { name: "Slack",      icon: IconBrandSlack },
 ];
 
 export function TechnologySection() {
